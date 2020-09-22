@@ -8,14 +8,15 @@ public class Main
         Bot gleb = new Bot();
         gleb.sendMsg("I am Gleb. Who are you?");
         String name = gleb.upMsg();
-        gleb.sendMsg(name);
+        gleb.sendMsg(".Hi, " + name + "!");
         while (true){
             String text = gleb.upMsg();
             switch (text){
-                case "/help":
+                case "/help","/start":
                     gleb.sendMsg("I am not working!");
                     break;
                 case "/dead":
+                    gleb.sendMsg("I died");
                     return;
                 default:
                     break;
