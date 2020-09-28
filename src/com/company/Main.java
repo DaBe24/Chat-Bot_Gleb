@@ -6,36 +6,25 @@ public class Main
 
     public static void main(String[] args) {
         Bot gleb = new Bot();
-<<<<<<< HEAD
-        gleb.sendMsg("I am Gleb. Who are you?");
-        String name = gleb.upMsg();
-        gleb.sendMsg(".Hi, " + name + "!");
+        gleb.sendMsg("Write \"/start\" to start work");
         while (true){
             String text = gleb.upMsg();
-            switch (text){
-                case "/help","/start":
-                    gleb.sendMsg("I am not working!");
-                    break;
-                case "/dead":
-                    gleb.sendMsg("I died");
-=======
-        gleb.sendMsg("I am Gleb. What is your name?");
-        String name = gleb.upMsg();
-        gleb.sendMsg("Nice to meet you, " + name + "!");
-        gleb.sendMsg("Type '/help' to see my commands");
-        while (true){
-            String text = gleb.upMsg();
-            switch (text){
-                case "/help":
-                    gleb.sendMsg("Oh hello there! I am Gleb, your text-chat bot.");
-                    gleb.sendMsg("My command list is: " +
-                            "/help - command list;" + " /dead - end current session; ");
-                    break;
-                case "/dead":
->>>>>>> c5ef66f... Kaka
+            switch (text) {
+                case "/help" -> gleb.sendMsg("Oh hello there! I am Gleb, your text-chat bot." +
+                        "\nMy command list is:" +
+                        "\n/help - command list;" +
+                        "\n/dead - end current session;");
+                case "/start" -> {
+                    gleb.sendMsg("I am Gleb. What is your name?");
+                    String name = gleb.upMsg();
+                    gleb.sendMsg("Nice to meet you, " + name + "!" +
+                            "\nType '/help' to see my commands.");
+                }
+                case "/dead" -> {
+                    gleb.sendMsg("I am died!!!");
                     return;
-                default:
-                    break;
+                }
+                default -> gleb.sendMsg("I don't understand!");
             }
         }
     }
