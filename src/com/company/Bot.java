@@ -9,6 +9,6 @@ public class Bot {
     }
 
     public void sendMsg(String msg) {
-        System.out.println("" + msg);
+        System.out.println(msg);
     }
 }
